@@ -1,8 +1,11 @@
-body,
-html {
+body {
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
 	background: linear-gradient(180deg, #FFF 0%, #ffe8b7 100%) no-repeat;
+}
+
+html {
+	height: 100%;
 }
 
 .container {
@@ -33,9 +36,12 @@ html {
 }
 
 .suggestion {
+	font-size: 24px;
 	text-align: center;
-	font-style: italic;
+	font-style: bold;
+	text-decoration: underline;
 	flex-basis: 70px;
+	/* mix-blend-mode: difference; */
 }
 
 

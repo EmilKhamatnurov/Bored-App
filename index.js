@@ -13,5 +13,23 @@ function createSuggestion() {
 		})
 		.catch(() => console.error("Something went wrong"))
 }
+function changeBackgroundColor() {
+	fetch("https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json")
+		.then(response => response.json())
+		.then(colorSet => {
+			var randomColorIndex = Math.floor(Math.random() * colorSet.length);
+			const firstGradientColor = colorSet[randomColorIndex].colors[0];
+			const secondGradientColor = colorSet[randomColorIndex].colors[1];
+			document.body.style.background = `linear-gradient(${firstGradientColor}, ${secondGradientColor})`
+			console.log(firstGradientColor, secondGradientColor);
+		});
+}
+createSuggestionBtnNode.addEventListener('click', function () {
+	createSuggestion();
+	changeBackgroundColor();
+} );
+// https://gradients.app/manifest.json
+// background: linear-gradient(blue, pink);
 
-createSuggestionBtnNode.addEventListener('click', createSuggestion);
+// var rand = Math.floor(Math.random() * arr.length);
+// alert(arr[rand]);
